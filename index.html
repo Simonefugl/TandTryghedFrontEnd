@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Forside</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Bestil tid knap -->
+<button id="openBookingBtn">Bestil tid</button>
+
+<!-- Modal (skjult som default) -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content" id="modalContent" style="display: none;">
+    <h2>Vælg behandling</h2>
+    <button class="selectable-option">Tandrensning</button>
+    <button class="selectable-option">Eftersyn</button>
+    <button class="selectable-option">Rodbehandling</button>
+    <div>
+      <button id="closeModalBtn">Luk</button>
+    </div>
+  </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
