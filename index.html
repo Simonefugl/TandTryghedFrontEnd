@@ -3,23 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Forside</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <!-- Bestil tid knap -->
 <button id="openBookingBtn">Bestil tid</button>
 
-<!-- Modal (skjult som default) -->
+<!-- Modal -->
 <div id="bookingModal" class="modal">
   <div class="modal-content" id="modalContent" style="display: none;">
     <h2>Vælg behandling</h2>
     <button class="selectable-option">Tandrensning</button>
-    <button class="selectable-option">Eftersyn</button>
+    <button class="selectable-option">Regelmæssigt tjek</button>
     <button class="selectable-option">Rodbehandling</button>
+
     <div>
+      <button id="nextStepBtn" disabled>Gå videre</button>
       <button id="closeModalBtn">Luk</button>
     </div>
+
+    <!-- Her tilføjes datoer, tider og brugerinfo dynamisk -->
   </div>
 </div>
 
