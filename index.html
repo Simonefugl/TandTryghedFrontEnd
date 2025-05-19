@@ -3,29 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <title>Forside</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-<!-- Bestil tid knap -->
-<button id="openBookingBtn">Bestil tid</button>
+<!-- Navigation -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#">FORSIDE</a></li>
+    <li><a href="#">KLINIKKER</a></li>
+    <li><a href="#">BEHANDLINGER</a></li>
+    <li><a href="#">DEN GODE OPLEVELSE</a></li>
+    <li><a href="#">AKUT</a></li>
+    <li><a href="#">PRISER</a></li>
+    <li><a href="#">KONTAKT</a></li>
+    <li><a href="#" class="cta">BESTIL TID</a></li>
+  </ul>
+</nav>
 
-<!-- Modal -->
-<div id="bookingModal" class="modal">
-  <div class="modal-content" id="modalContent" style="display: none;">
+<!-- Landing section -->
+<div class="landing">
+  <div class="welcome">
+    <h2>Velkommen til<br>Tand & Tryghed</h2>
+    <button id="openBookingBtn">Bestil tid</button>
+    <button>Se prisliste</button>
+  </div>
+  <div class="info">
+    <h3>Åbningstider</h3>
+    <p>Man–Fre: 08.00–16.00</p>
+    <p>Telefon: 12 34 56 78</p>
+    <p>Adresse: Trygvej 1, 2800 Kongens Lyngby</p>
+  </div>
+</div>
+
+<!-- Behandlinger section -->
+<div class="behandlinger-section">
+  <h3>Behandlinger</h3>
+  <div class="behandlinger-grid">
+    <div class="behandling-box" data-behandling="paradentose">paradentose</div>
+    <div class="behandling-box" data-behandling="kosmetisk">kosmetisk</div>
+    <div class="behandling-box" data-behandling="rodbehandling">rod behandling</div>
+    <div class="behandling-box" data-behandling="huller">huller</div>
+    <div class="behandling-box" data-behandling="tandlaegeskraek">tandlæge<br>skræk</div>
+  </div>
+</div>
+
+<!-- Modal til behandlingstekst -->
+<div id="behandlingModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3 id="behandlingModalTitle">Titel</h3>
+    <p id="behandlingModalText">Her kommer teksten om behandlingen.</p>
+    <div class="modal-footer">
+      <button id="closeBehandlingModal">Luk</button>
+    </div>
+  </div>
+</div>
+
+<!-- Bookingmodal -->
+<div id="bookingModal" class="modal" style="display: none;">
+  <div class="modal-content" id="modalContent">
     <h2>Vælg behandling</h2>
     <button class="selectable-option">Tandrensning</button>
     <button class="selectable-option">Regelmæssigt tjek</button>
     <button class="selectable-option">Rodbehandling</button>
 
-    <div>
-      <button id="nextStepBtn" disabled>Gå videre</button>
+    <div class="modal-footer">
       <button id="closeModalBtn">Luk</button>
+      <button id="nextStepBtn" disabled>Gå videre</button>
     </div>
-
-    <!-- Her tilføjes datoer, tider og brugerinfo dynamisk -->
   </div>
 </div>
 
+<!-- JS -->
 <script src="index.js"></script>
+<script src="behandlingModal.js"></script>
+
 </body>
 </html>

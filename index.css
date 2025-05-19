@@ -1,0 +1,264 @@
+/* === GLOBALT === */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h2, h3 {
+    font-weight: 700;
+    margin-top: 0;
+}
+
+/* === NAVIGATION === */
+.navbar {
+    background-color: #4a90e2;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li a {
+    display: block;
+    padding: 16px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    background-color: #357ab8;
+}
+
+.navbar .cta {
+    background-color: #f1c40f;
+    color: black;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.navbar .cta:hover {
+    background-color: #d4ac0d;
+}
+
+/* === LANDING === */
+.landing {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #e9ecef;
+    flex-wrap: wrap;
+}
+
+.landing .welcome,
+.landing .info {
+    width: 45%;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.landing .welcome h2 {
+    margin-bottom: 20px;
+}
+
+.landing button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    margin: 10px 5px 0 0;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.landing button:hover {
+    background-color: #357ab8;
+}
+
+/* === BEHANDLINGER === */
+.behandlinger-section {
+    padding: 30px;
+    background-color: #dcdcdc;
+}
+
+.behandlinger-section h3 {
+    margin-bottom: 20px;
+}
+
+.behandlinger-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.behandling-box {
+    flex: 1 1 150px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.behandling-box:hover {
+    background-color: #e3f2fd;
+    transform: translateY(-3px);
+}
+
+/* === MODAL === */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+
+/* Centreret booking modal */
+#bookingModal {
+    justify-content: center;
+    align-items: center;
+}
+
+/* === MODAL CONTENT === */
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* === FORM ELEMENTER === */
+button {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #4a90e2;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #357ab8;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+button.selected {
+    background-color: #2e6db8;
+}
+
+button.secondary {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+/* === VALGMULIGHEDER === */
+.selectable-option,
+.date-option,
+.time-option {
+    background-color: #e0e0e0;
+    margin: 6px 4px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.selectable-option:hover,
+.date-option:hover,
+.time-option:hover {
+    background-color: #d2d2d2;
+}
+
+.selectable-option.selected,
+.date-option.selected,
+.time-option.selected {
+    background-color: #4a90e2;
+    color: white;
+}
+
+/* === FORMULAR === */
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+/* === SEKTIONSMARGIN === */
+#brugerInfo,
+#dateContainer,
+#timeContainer,
+#bookingConfirm {
+    margin-top: 20px;
+}
+
+#bookingConfirm {
+    text-align: center;
+}
