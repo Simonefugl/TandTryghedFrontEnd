@@ -1,0 +1,61 @@
+.prisliste-section {
+    padding: 40px;
+    background-color: #f4f6f8;
+    font-family: 'Nunito', sans-serif;
+    color: #333;
+}
+
+.prisliste-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.pris-tabel {
+    max-width: 700px;
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pris-tabel th,
+.pris-tabel td {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+.pris-tabel th {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+}
+
+.pris-tabel tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.pris-tabel tr:hover {
+    background-color: #e3f2fd;
+}
+
+.back-button {
+    display: block;
+    margin: 30px auto 0;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    width: fit-content;
+}
+
+.back-button:hover {
+    background-color: #357ab8;
+}

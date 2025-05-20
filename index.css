@@ -1,4 +1,5 @@
 /* === GLOBALT === */
+/* Gælder for hele siden: generel font, baggrundsfarve og tekstfarve */
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #f4f6f8;
@@ -27,7 +28,7 @@ h2, h3 {
     padding: 0;
     margin: 0;
 }
-
+/* Links i navbar */
 .navbar li a {
     display: block;
     padding: 16px 20px;
@@ -49,10 +50,11 @@ h2, h3 {
 }
 
 .navbar .cta:hover {
-    background-color: #d4ac0d;
+    background-color: rgba(253, 247, 133, 0.56);
 }
 
 /* === LANDING === */
+/* Landing page layout: 2 bokse side om side */
 .landing {
     display: flex;
     justify-content: space-between;
@@ -60,7 +62,7 @@ h2, h3 {
     background-color: #e9ecef;
     flex-wrap: wrap;
 }
-
+/* Bokse til velkomst og info */
 .landing .welcome,
 .landing .info {
     width: 45%;
@@ -70,7 +72,7 @@ h2, h3 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
-
+/* Overskrift spacing */
 .landing .welcome h2 {
     margin-bottom: 20px;
 }
@@ -92,6 +94,7 @@ h2, h3 {
 }
 
 /* === BEHANDLINGER === */
+/* Sektion med behandlinger (kort/box layout) */
 .behandlinger-section {
     padding: 30px;
     background-color: #dcdcdc;
@@ -114,10 +117,12 @@ h2, h3 {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    font-weight: bold;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s ease, background-color 0.2s ease;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+    color: #555;
 }
 
 .behandling-box:hover {
@@ -125,6 +130,26 @@ h2, h3 {
     transform: translateY(-3px);
 }
 
+.behandling-box strong {
+    font-size: 1.2rem;
+    color: #4a90e2;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}
+
+.behandling-box div:nth-child(2) {
+    min-height: 48px; /* Fast højde til brødteksten */
+}
+
+.behandling-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 12px;
+}
 /* === MODAL === */
 .modal {
     position: fixed;
@@ -159,7 +184,9 @@ h2, h3 {
     flex-direction: column;
     position: relative;
     animation: fadeIn 0.3s ease;
+
 }
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
@@ -211,7 +238,7 @@ button.secondary {
 .selectable-option,
 .date-option,
 .time-option {
-    background-color: #e0e0e0;
+    background-color:#4a90e2;
     margin: 6px 4px;
     padding: 10px 16px;
     border-radius: 8px;

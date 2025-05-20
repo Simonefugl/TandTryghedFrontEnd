@@ -29,6 +29,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="selectable-option">Tandrensning</button>
             <button class="selectable-option">Regelmæssigt tjek</button>
             <button class="selectable-option">Rodbehandling</button>
+            <button class="selectable-option">Røntgenundersøgelse</button>
+            <button class="selectable-option">Bideskinne-tjek</button>
+            <button class="selectable-option">Bøjle-tjek</button>
+            <button class="selectable-option">Parodontoseundersøgelse</button>
+            <button class="selectable-option">Kosmetisk vurdering</button>
+            <button class="selectable-option">Fyldning af hul</button>
+            
             <div class="modal-footer">
                 <button id="closeModalBtn">Luk</button>
                 <button id="nextStepBtn" disabled>Gå videre</button>
@@ -56,7 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (step === 1 && valgtBehandling) {
                 step = 2;
                 nextStepBtn.disabled = true;
-                fetch(`http://localhost:8080/api/employees/available-dates?treatmentName=${valgtBehandling}`)
+
+                console.log("Valgt behandling:", valgtBehandling);
+
+                fetch(`http://localhost:8080/api/employees/available-dates?treatmentName=${encodeURIComponent(valgtBehandling)}`)
                     .then(res => res.json())
                     .then(dates => {
                         dates.sort((a, b) => new Date(a) - new Date(b));

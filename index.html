@@ -18,7 +18,11 @@
     <li><a href="#">AKUT</a></li>
     <li><a href="#">PRISER</a></li>
     <li><a href="#">KONTAKT</a></li>
-    <li><a href="#" class="cta">BESTIL TID</a></li>
+
+    <a href="bookingOverview.html" class="openPriceListBtn">
+      <button>ADMIN</button>
+    </a>
+
   </ul>
 </nav>
 
@@ -27,7 +31,12 @@
   <div class="welcome">
     <h2>Velkommen til<br>Tand & Tryghed</h2>
     <button id="openBookingBtn">Bestil tid</button>
-    <button>Se prisliste</button>
+
+
+    <a href="priceList.html" class="openPriceListBtn">
+      <button>Se prisliste</button>
+    </a>
+
   </div>
   <div class="info">
     <h3>Åbningstider</h3>
@@ -41,11 +50,33 @@
 <div class="behandlinger-section">
   <h3>Behandlinger</h3>
   <div class="behandlinger-grid">
-    <div class="behandling-box" data-behandling="paradentose">paradentose</div>
-    <div class="behandling-box" data-behandling="kosmetisk">kosmetisk</div>
-    <div class="behandling-box" data-behandling="rodbehandling">rod behandling</div>
-    <div class="behandling-box" data-behandling="huller">huller</div>
-    <div class="behandling-box" data-behandling="tandlaegeskraek">tandlæge<br>skræk</div>
+    <div class="behandling-box" data-behandling="paradentose">
+      <div><strong>Parodontose</strong></div>
+      <div>Behandling af tandkødssygdomme og løse tænder.</div>
+      <img src="https://cdn.prod.website-files.com/614cc4e7a2f79e0153f3b1cf/6659d91545c94b72e55e6b48_Mental%20Health%20(28).png" alt="Rodbehandling">
+    </div>
+    <div class="behandling-box" data-behandling="kosmetisk">
+      <div><strong>Kosmetisk vurdering</strong></div>
+      <div>Gennemgang af muligheder som facader og blegning.</div>
+      <img src="https://thewhitetusk.b-cdn.net/wp-content/uploads/2023/02/veneers.webp" alt="Rodbehandling">
+    </div>
+    <div class="behandling-box" data-behandling="rodbehandling">
+      <div><strong>Rodbehandling</strong></div>
+      <div>Fjernelse af betændelse i tandens nerve – smertefrit.</div>
+      <img src="https://img.freepik.com/premium-photo/doctor-white-suit-with-gloves-isolated-grey_274222-23804.jpg" alt="Rodbehandling">
+    </div>
+    <div class="behandling-box" data-behandling="huller">
+      <div><strong>Fyldning af huller</strong></div>
+      <div>Behandling af caries med fyldning i tandens farve.</div>
+      <img src="https://media.istockphoto.com/id/1409751200/vector/sore-tooth-with-black-tooth-decay.jpg?s=612x612&w=0&k=20&c=xBl6by7qTuR_9_m7vxJrt92yzebDlWZV2FVYWma7lgs=" alt="Rodbehandling">
+
+    </div>
+    <div class="behandling-box" data-behandling="tandlaegeskraek">
+      <div><strong>Tandlægeskræk</strong></div>
+      <div>Tryg og rolig behandling for nervøse patienter.</div>
+      <img src="https://tandbro.dk/wp-content/uploads/2021/12/Tandlgerne-i-Parken-14-scaled.jpg.webp" alt="Rodbehandling">
+
+    </div>
   </div>
 </div>
 
@@ -67,6 +98,13 @@
     <button class="selectable-option">Tandrensning</button>
     <button class="selectable-option">Regelmæssigt tjek</button>
     <button class="selectable-option">Rodbehandling</button>
+    <button class="selectable-option">Røntgenundersøgelse</button>
+    <button class="selectable-option">Bideskinne-tjek</button>
+    <button class="selectable-option">Bøjle-tjek</button>
+    <button class="selectable-option">Parodontoseundersøgelse</button>
+    <button class="selectable-option">Kosmetisk vurdering</button>
+    <button class="selectable-option">Fyldning af hul</button>
+
 
     <div class="modal-footer">
       <button id="closeModalBtn">Luk</button>
@@ -77,7 +115,6 @@
 
 <!-- JS -->
 <script src="index.js"></script>
-<script src="behandlingModal.js"></script>
 
 </body>
 </html>

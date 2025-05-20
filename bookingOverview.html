@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin bookingoversigt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bookingOverview.css">
+</head>
+<body>
+<div class="booking-container">
+    <h2>Bookingoversigt</h2>
+
+    <div class="filter-sort-bar">
+        <input type="text" id="searchInput" placeholder="Søg efter navn eller behandling...">
+        <select id="sortSelect">
+            <option value="date">Sorter efter dato</option>
+            <option value="name">Sorter efter navn</option>
+        </select>
+    </div>
+
+    <table class="booking-table">
+        <thead>
+        <tr>
+            <th data-key="firstName">Navn</th>
+            <th data-key="treatmentName">Behandling</th>
+            <th data-key="date">Dato</th>
+            <th data-key="time">Tid</th>
+            <th data-key="email">Email</th>
+            <th data-key="phone">Telefon</th>
+            <th>Rediger</th>
+            <th>Slet</th>
+        </tr>
+        </thead>
+        <tbody id="bookingTableBody">
+        <!-- JS fylder data her -->
+        </tbody>
+    </table>
+
+    <a href="index.html" class="back-button">← Tilbage</a>
+</div>
+
+<!-- Modal til slet bekræftelse -->
+<div id="deleteModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <p>Er du sikker på du vil slette denne booking?</p>
+        <div class="modal-footer">
+            <button id="cancelDeleteBtn">Annuller</button>
+            <button id="confirmDeleteBtn">Bekræft</button>
+        </div>
+    </div>
+</div>
+
+<script src="bookingOverview.js"></script>
+</body>
+</html>

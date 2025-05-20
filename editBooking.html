@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Rediger booking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="editBooking.css">
+</head>
+<body>
+<div class="booking-container">
+    <h2>Rediger booking</h2>
+
+    <form id="editForm">
+        <label>Fornavn:
+            <input type="text" id="firstName" required />
+        </label>
+
+        <label>Efternavn:
+            <input type="text" id="lastName" required />
+        </label>
+
+        <label>Email:
+            <input type="email" id="email" required />
+        </label>
+
+        <label>Telefon:
+            <input type="tel" id="phone" required />
+        </label>
+
+        <label>Behandling:
+            <select id="treatmentName" required>
+                <option value="Tandrensning">Tandrensning</option>
+                <option value="Regelmæssigt tjek">Regelmæssigt tjek</option>
+                <option value="Rodbehandling">Rodbehandling</option>
+                <option value="Røntgenundersøgelse">Røntgenundersøgelse</option>
+                <option value="Bideskinne-tjek">Bideskinne-tjek</option>
+                <option value="Bøjle-tjek">Bøjle-tjek</option>
+                <option value="Parodontoseundersøgelse">Parodontoseundersøgelse</option>
+                <option value="Kosmetisk vurdering">Kosmetisk vurdering</option>
+                <option value="Fyldning af hul">Fyldning af hul</option>
+            </select>
+        </label>
+
+        <label>Dato:
+            <input type="date" id="date" required />
+        </label>
+
+        <label>Tid:
+            <input type="time" id="time" required />
+        </label>
+
+        <div class="modal-footer">
+            <a href="bookingOverview.html" class="back-button">← Annuller</a>
+            <button type="submit">Gem ændringer</button>
+        </div>
+    </form>
+</div>
+
+<script src="editBooking.js"></script>
+</body>
+</html>
