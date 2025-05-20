@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("editForm");
     const params = new URLSearchParams(window.location.search);
     const bookingId = params.get("id");
+    console.log("Booking ID fra URL:", bookingId);
 
     if (!bookingId) {
         alert("Booking-ID mangler i URL'en");
@@ -9,8 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
+
+
     // Hent eksisterende booking
-    fetch(`http://localhost:8080/api/bookings/${bookingId}`)
+    fetch(`http://localhost:8080/api/bookings/id/${bookingId}`)
         .then(res => res.json())
         .then(b => {
             document.getElementById("firstName").value = b.firstName;
@@ -40,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
             time: form.time.value
         };
 
-        fetch(`http://localhost:8080/api/bookings/${bookingId}`, {
+        fetch(`http://localhost:8080/api/bookings/id/${bookingId}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(updatedBooking)
