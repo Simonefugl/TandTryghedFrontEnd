@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let bookings = [];
     let currentSort = "date";
     let bookingToDeleteId = null;
+    
 
     // Hent bookinger fra backend
     fetch("http://localhost:8080/api/bookings/overview")
@@ -25,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const filtered = bookings.filter(b =>
             b.treatmentName?.toLowerCase().includes(search) ||
             b.firstName?.toLowerCase().includes(search) ||
-            b.lastName?.toLowerCase().includes(search)
+            b.lastName?.toLowerCase().includes(search) ||
+            b.employeeFirstName?.toLowerCase().includes(search)
         );
         renderTable(filtered);
     });
@@ -65,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             row.innerHTML = `
                 <td>${b.firstName} ${b.lastName}</td>
                 <td>${b.treatmentName}</td>
+                <td>${b.employeeFirstName || "–"}</td>
                 <td>${b.date}</td>
                 <td>${b.time}</td>
                 <td>${b.email}</td>
@@ -74,33 +77,36 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             tableBody.appendChild(row);
         });
-
-        // Knapper: Rediger
-        document.querySelectorAll(".edit-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const id = btn.getAttribute("data-id");
-                window.location.href = `editBooking.html?id=${id}`;
-            });
-        });
-
-        // Knapper: Slet
-        document.querySelectorAll(".delete-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                bookingToDeleteId = btn.getAttribute("data-id");
-                deleteModal.style.display = "flex";
-            });
-        });
     }
+
+    // Event delegation for delete og edit
+    tableBody.addEventListener("click", (e) => {
+        if (e.target.classList.contains("delete-btn")) {
+            bookingToDeleteId = e.target.getAttribute("data-id");
+            console.log("Klikket på slet, ID:", bookingToDeleteId);
+            deleteModal.style.display = "flex";
+        }
+
+        if (e.target.classList.contains("edit-btn")) {
+            const id = e.target.getAttribute("data-id");
+            window.location.href = `editBooking.html?id=${id}`;
+        }
+    });
 
     // Modal: Annuller
     cancelDeleteBtn.addEventListener("click", () => {
         deleteModal.style.display = "none";
+        console.log("Klikket på annuller");
         bookingToDeleteId = null;
     });
 
     // Modal: Bekræft slet
     confirmDeleteBtn.addEventListener("click", () => {
-        if (!bookingToDeleteId) return;
+        console.log("Bekræft slet");
+        if (!bookingToDeleteId) {
+            console.log("Sletter ikke noget");
+            return;}
+        console.log("Kalder api");
         fetch(`http://localhost:8080/api/bookings/${bookingToDeleteId}`, {
             method: "DELETE"
         })

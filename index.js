@@ -64,8 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 step = 2;
                 nextStepBtn.disabled = true;
 
-                console.log("Valgt behandling:", valgtBehandling);
-
                 fetch(`http://localhost:8080/api/employees/available-dates?treatmentName=${encodeURIComponent(valgtBehandling)}`)
                     .then(res => res.json())
                     .then(dates => {
@@ -225,11 +223,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (!res.ok) throw new Error("Noget gik galt ved oprettelse af booking");
                     return res.json();
                 })
-                .then(() => {
+                .then(data => {
                     modalContent.innerHTML = `
                         <h2>✅ Din booking er bekræftet!</h2>
-                        <p>Tak, ${booking.firstName} – vi glæder os til at se dig.</p>
-                        <p><strong>${booking.treatmentName}</strong> den <strong>${booking.date}</strong> kl. <strong>${booking.time}</strong>.</p>
+                        <p>Tak, ${data.firstName} – vi glæder os til at se dig.</p>
+                        <p><strong>${data.treatmentName}</strong> den <strong>${data.date}</strong> kl. <strong>${data.time}</strong>.</p>
+                        <p>Din behandler bliver: <strong>${data.employeeFirstName}</strong></p>
                         <button id="closeConfirmationBtn">Luk</button>
                     `;
                     document.getElementById("closeConfirmationBtn").addEventListener("click", () => {
