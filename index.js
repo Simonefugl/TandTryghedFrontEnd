@@ -181,20 +181,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         document.getElementById("confirmBookingBtn").addEventListener("click", () => {
+            const fornavn = document.getElementById("fornavn").value.trim();
+            const efternavn = document.getElementById("efternavn").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const telefon = document.getElementById("telefon").value.trim();
+
+            if (!fornavn || !efternavn || !email || !telefon) {
+                alert("Alle felter skal udfyldes!");
+                return;
+            }
+
             const booking = {
                 treatmentName: valgtBehandling,
                 date: valgtDato,
                 time: valgtTid,
-                firstName: document.getElementById("fornavn").value,
-                lastName: document.getElementById("efternavn").value,
-                email: document.getElementById("email").value,
-                phone: document.getElementById("telefon").value
+                firstName: fornavn,
+                lastName: efternavn,
+                email: email,
+                phone: telefon
             };
+
             visBookingBekræftelse(booking);
         });
     }
 
-    function visBookingBekræftelse(booking) {
+
+        function visBookingBekræftelse(booking) {
         modalContent.innerHTML = `
             <h2>Bekræft din booking</h2>
             <p><strong>Behandling:</strong> ${booking.treatmentName}</p>
